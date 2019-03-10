@@ -9,8 +9,9 @@ namespace BinarySplit.Tests
         [Theory]
         [InlineData(-1, 3, new int[0])]
         [InlineData(-1, 3, new int[] { 1 })]
-        [InlineData(0, 1,  new int[] { 1 })]
-        //   assert_equal(0,  chop(1, [1, 3, 5]))
+        [InlineData(0, 1, new int[] { 1 })]
+        [InlineData(0, 1, new int[] { 1, 3, 5 })]
+        [InlineData(1, 3, new int[] { 1, 3, 5 })]
         //   assert_equal(1,  chop(3, [1, 3, 5]))
         //   assert_equal(2,  chop(5, [1, 3, 5]))
         //   assert_equal(-1, chop(0, [1, 3, 5]))
@@ -40,15 +41,16 @@ namespace BinarySplit.Tests
     {
         public int chop(int valueToFind, int[] array)
         {
-            if(array == null || array.Length == 0)
+            if (array == null || array.Length == 0)
             {
                 return -1;
             }
-            if(array[0] == valueToFind)
+
+            if (array[0] == valueToFind)
             {
                 return 0;
             }
-            
+
             return -1;
         }
     }
