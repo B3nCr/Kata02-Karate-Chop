@@ -51,6 +51,13 @@ namespace BinarySplit.Tests
                 return 0;
             }
 
+            int middleIndex = array.Length/2;
+
+            var middleValue = array[middleIndex];
+            if(middleValue == valueToFind){
+                return middleIndex;
+            }
+
             return -1;
         }
     }
