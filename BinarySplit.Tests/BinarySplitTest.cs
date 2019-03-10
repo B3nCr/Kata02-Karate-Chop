@@ -6,12 +6,31 @@ namespace BinarySplit.Tests
 {
     public class BinarySplitTest
     {
-        [Fact]
-        public void CanAdd()
+        [Theory]
+        [InlineData(-1, 3, new int[0])]
+//   assert_equal(-1, chop(3, [1]))
+//   assert_equal(0,  chop(1, [1]))
+//   assert_equal(0,  chop(1, [1, 3, 5]))
+//   assert_equal(1,  chop(3, [1, 3, 5]))
+//   assert_equal(2,  chop(5, [1, 3, 5]))
+//   assert_equal(-1, chop(0, [1, 3, 5]))
+//   assert_equal(-1, chop(2, [1, 3, 5]))
+//   assert_equal(-1, chop(4, [1, 3, 5]))
+//   assert_equal(-1, chop(6, [1, 3, 5]))
+//   assert_equal(0,  chop(1, [1, 3, 5, 7]))
+//   assert_equal(1,  chop(3, [1, 3, 5, 7]))
+//   assert_equal(2,  chop(5, [1, 3, 5, 7]))
+//   assert_equal(3,  chop(7, [1, 3, 5, 7]))
+//   assert_equal(-1, chop(0, [1, 3, 5, 7]))
+//   assert_equal(-1, chop(2, [1, 3, 5, 7]))
+//   assert_equal(-1, chop(4, [1, 3, 5, 7]))
+//   assert_equal(-1, chop(6, [1, 3, 5, 7]))
+//   assert_equal(-1, chop(8, [1, 3, 5, 7]))
+        public void CanAdd(int expected, int search, int[] array)
         {
             var splitter = new BinarySpliter();
-            var index = splitter.chop(1, new[] { 1, 2, 3, 4, 5, 6 });
-            index.Should().Be(1);
+            var index = splitter.chop(search, array);
+            index.Should().Be(expected);
         }
     }
 
