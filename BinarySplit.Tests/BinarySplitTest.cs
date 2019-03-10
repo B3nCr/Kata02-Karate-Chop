@@ -40,6 +40,15 @@ namespace BinarySplit.Tests
     {
         public int chop(int valueToFind, int[] array)
         {
+            if(array == null || array.Length == 0)
+            {
+                return -1;
+            }
+            if(array[0] == valueToFind)
+            {
+                return 0;
+            }
+            
             return -1;
         }
     }
