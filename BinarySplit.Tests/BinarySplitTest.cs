@@ -12,7 +12,7 @@ namespace BinarySplit.Tests
         [InlineData(0, 1, new int[] { 1 })]
         [InlineData(0, 1, new int[] { 1, 3, 5 })]
         [InlineData(1, 3, new int[] { 1, 3, 5 })]
-        //   assert_equal(1,  chop(3, [1, 3, 5]))
+        [InlineData(2, 5, new int[] { 1, 3, 5 })]
         //   assert_equal(2,  chop(5, [1, 3, 5]))
         //   assert_equal(-1, chop(0, [1, 3, 5]))
         //   assert_equal(-1, chop(2, [1, 3, 5]))
