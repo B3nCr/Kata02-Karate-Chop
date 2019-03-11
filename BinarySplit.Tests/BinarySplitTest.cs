@@ -1,11 +1,19 @@
 ﻿using System;
 using Xunit;
 using FluentAssertions;
+using Xunit.Abstractions;
 
 namespace BinarySplit.Tests
 {
     public class BinarySplitTest
     {
+        private readonly ITestOutputHelper output;
+
+        public BinarySplitTest(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Theory]
         [InlineData(-1, 3, new int[0])]
         [InlineData(-1, 3, new int[] { 1 })]
@@ -29,7 +37,7 @@ namespace BinarySplit.Tests
         //   assert_equal(-1, chop(8, [1, 3, 5, 7]))
         public void CanAdd(int expected, int search, int[] array)
         {
-            var splitter = new BinarySpliter();
+            var splitter = new BinarySplitter(this.output);
 
             var index = splitter.chop(search, array);
 
@@ -37,8 +45,15 @@ namespace BinarySplit.Tests
         }
     }
 
-    internal class BinarySpliter
+    internal class BinarySplitter
     {
+        private readonly ITestOutputHelper output;
+
+        public BinarySplitter(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         public int chop(int valueToFind, int[] array)
         {
             if (array == null || array.Length == 0)
@@ -52,8 +67,22 @@ namespace BinarySplit.Tests
             }
 
             int middleIndex = array.Length / 2;
+            output.WriteLine($"Middle Index = {middleIndex}");
 
             var middleValue = array[middleIndex];
+            if (middleValue == valueToFind)
+            {
+                return middleIndex;
+            }
+
+            if (middleValue < valueToFind)
+            {
+                middleIndex = middleIndex + (array.Length - middleIndex / 2);
+                output.WriteLine($"New index = {middleIndex}");
+            }
+
+
+            middleValue = array[middleIndex];
             if (middleValue == valueToFind)
             {
                 return middleIndex;
