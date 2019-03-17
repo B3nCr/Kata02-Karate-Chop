@@ -76,38 +76,37 @@ namespace BinarySplit.Tests
             }
 
             var leftIndex = 0;
-            var length = array.Length;
-            var middleIndex = length / 2;
+            var rightIndex = array.Length - 1;
+
+            return split(valueToFind, array, leftIndex, rightIndex);
+        }
+
+        private int split(int valueToFind, int[] array, int leftIndex, int rightIndex)
+        {
+            var middleIndex = (rightIndex - leftIndex) / 2 + leftIndex;
+
             var value = array[middleIndex];
             if (value == valueToFind)
             {
                 return middleIndex;
             }
 
-            if (value > valueToFind)
+            if (leftIndex == rightIndex)
             {
-                length = middleIndex;
-                middleIndex = length / 2;
-                value = array[middleIndex];
-                if (value == valueToFind)
-                {
-                    return middleIndex;
-                }
+                return -1;
+            }
+            else if(value < valueToFind)
+            {
+                return split(valueToFind, array, middleIndex + 1, rightIndex);
+            }
+            else if (value > valueToFind)
+            {
+                return split(valueToFind, array, leftIndex, middleIndex -1);
             }
             else
             {
-                leftIndex = middleIndex;
-                length = length - middleIndex + 1;
-                middleIndex = length / 2 + middleIndex;
-                output.WriteLine($"{middleIndex}");
-                value = array[middleIndex];
-                if (value == valueToFind)
-                {
-                    return middleIndex;
-                }
+                return -1;
             }
-
-            return -1;
         }
     }
 }
