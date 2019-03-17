@@ -27,7 +27,7 @@ namespace BinarySplit.Tests
 
         [Theory]
         [ClassData(typeof(BinarySearchTestData))]
-        public void TestIternativeSearcher(int expected, int search, int[] array)
+        public void TestIterativeSearcher(int expected, int search, int[] array)
         {
             ISearcher searcher = new IterativeSearcher();
 
@@ -46,7 +46,17 @@ namespace BinarySplit.Tests
     {
         public int FindIndex(int search, int[] array)
         {
-            throw new NotImplementedException();
+            int left = 0;
+            int right = array.Length - 1;
+            int middle = (right - left) / 2 + left;
+
+            var value = array[middle];
+            if (value == search)
+            {
+                return middle;
+            }
+
+            return -1;
         }
     }
 }
