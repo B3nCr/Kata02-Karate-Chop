@@ -48,12 +48,25 @@ namespace BinarySplit.Tests
         {
             int left = 0;
             int right = array.Length - 1;
-            int middle = (right - left) / 2 + left;
 
-            var value = array[middle];
-            if (value == search)
+            while (left <= right)
             {
-                return middle;
+                int middle = (right - left) / 2 + left;
+
+                var value = array[middle];
+                if (value == search)
+                {
+                    return middle;
+                }
+
+                if (value < search)
+                {
+                    left = middle + 1;
+                }
+                else
+                {
+                    right = middle - 1;
+                }
             }
 
             return -1;
