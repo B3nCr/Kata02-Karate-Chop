@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.28711.60
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinarySplit.Tests", "BinarySplit.Tests\BinarySplit.Tests.csproj", "{0D96E583-0269-40CE-B098-39B615D626DE}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpSplitter", "FSharpSplitter\FSharpSplitter.fsproj", "{2C654834-7B75-4C03-9077-F6251C76C813}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,18 +27,6 @@ Global
 		{0D96E583-0269-40CE-B098-39B615D626DE}.Release|x64.Build.0 = Release|Any CPU
 		{0D96E583-0269-40CE-B098-39B615D626DE}.Release|x86.ActiveCfg = Release|Any CPU
 		{0D96E583-0269-40CE-B098-39B615D626DE}.Release|x86.Build.0 = Release|Any CPU
-		{2C654834-7B75-4C03-9077-F6251C76C813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C654834-7B75-4C03-9077-F6251C76C813}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C654834-7B75-4C03-9077-F6251C76C813}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{2C654834-7B75-4C03-9077-F6251C76C813}.Debug|x64.Build.0 = Debug|Any CPU
-		{2C654834-7B75-4C03-9077-F6251C76C813}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{2C654834-7B75-4C03-9077-F6251C76C813}.Debug|x86.Build.0 = Debug|Any CPU
-		{2C654834-7B75-4C03-9077-F6251C76C813}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C654834-7B75-4C03-9077-F6251C76C813}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C654834-7B75-4C03-9077-F6251C76C813}.Release|x64.ActiveCfg = Release|Any CPU
-		{2C654834-7B75-4C03-9077-F6251C76C813}.Release|x64.Build.0 = Release|Any CPU
-		{2C654834-7B75-4C03-9077-F6251C76C813}.Release|x86.ActiveCfg = Release|Any CPU
-		{2C654834-7B75-4C03-9077-F6251C76C813}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
