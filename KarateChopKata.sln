@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28711.60
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinarySplit.Tests", "BinarySplit.Tests\BinarySplit.Tests.csproj", "{0D96E583-0269-40CE-B098-39B615D626DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinarySearch.Tests", "BinarySplit.Tests\BinarySearch.Tests.csproj", "{0D96E583-0269-40CE-B098-39B615D626DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
